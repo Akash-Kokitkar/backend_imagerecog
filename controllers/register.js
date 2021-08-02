@@ -28,7 +28,7 @@ const handleregister=(req,res,db,bcrypt)=>{
           ).
           then(usr=>{res.json(usr[0])
           })
-      }).then(trx.commit)
+      }).then(trx.commit).then(err=>console.log('okk'))
       .catch(trx.rollback)
      
           
