@@ -28,7 +28,7 @@ const handleregister=(req,res,db,bcrypt)=>{
           ).
           then(usr=>{res.json(usr[0])
           })
-      }).then(trx.commit).then(err=>console.log('okk'))
+      }).then(trx.commit)
       .catch(trx.rollback)
      
           
@@ -36,7 +36,7 @@ const handleregister=(req,res,db,bcrypt)=>{
     })
       
       .then(usr=>{res.json(usr)}
-          ).catch(err=>res.status(400).json('unable to connect'))
+          ).catch(err=>res.status(400).json(err))
   
      
   } 
