@@ -1,3 +1,4 @@
+
 const express=require('express');
 const cors=require('cors');
 const knex=require('knex');
@@ -15,10 +16,8 @@ app.use(cors());
 const db=knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      user : 'postgres',
-      password : 'postgres',
-      database : 'smartbrain'
+      connectionString : process.env.DATABSE_URL,
+      ssl:true
     }
   });
 
